@@ -33,17 +33,19 @@ First, you need to configure 2 folders to watch for changes:
 * `themeSource` - your theme root folder, most likely what you have version controlled.
 * `partialsSource` - the path to your [scss partials](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials).
 
-In both cases you want to define a Glob using the [minimatch syntax](https://github.com/isaacs/minimatch). Like this:
+In both cases you want to define a Glob using the [minimatch syntax](https://github.com/isaacs/minimatch).
 
-	// Common used syntax:
-	// *  - matches any characters but slash (/).
-	// ** - matches any characters including slash (/). Meaning, recursively include subfolder(s), if any.
+Common used syntax:
 
-	// Matching all files in webapp its subdirectories.
+	*  - matches any characters but slash (/).
+	** - matches any characters including slash (/). Meaning, recursively include subfolder(s), if any.
+
+Example: Matching all files in webapp its subdirectories.
+
 	themeSource: '/code/my-project/my-theme/src/main/webapp/**'
-	
-	// Matching all files begining with an underscore (_) and ending with .scss
-	// in a subdirectory to partials.
+
+Example: Matching all files begining with an underscore (_) and ending with .scss, in a subdirectory to partials.
+
 	partialsSource: '/code/my-project/my-theme/src/main/webapp/css/partials/**/_*.scss'
 
 Then you need to configure:
