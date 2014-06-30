@@ -1,0 +1,26 @@
+{
+  "name": "monator-liferay-instant-deploy-theme-tool",
+  "version": "0.9.0",
+  "description": "This small Gulp script will monitor your source code theme folder and when a file is changed it will instantly inject those changes into the server and makes sure that the scss is recompiled into a css file if needed",
+  "main": "index.js",
+  "keywords": [
+    "liferay",
+    "monator",
+    "theme",
+    "development",
+    "tool"
+  ],
+  "author": "Monator Technologies",
+  "contributors": [
+    {
+        "name": "Emil Oberg",
+        "url": "http://emiloberg.se"
+    }
+  ],  
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.8.5",
+    "gulp-newer": "^0.3.0",
+    "gulp-header": "^1.0.2"
+  }
+}
