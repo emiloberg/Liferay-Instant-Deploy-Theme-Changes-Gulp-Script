@@ -18,11 +18,11 @@ var newer = require('gulp-newer');
 var header = require('gulp-header');
 
 var paths = {
-	themeSource: '/Users/emiloberg/code/moh/ehealth-portal-theme/src/main/webapp/**',
-	themeServer: '/Users/emiloberg/liferay/moh/tomcat-7.0.42/webapps/ehealth-portal-theme',
-	partialsSource: '/Users/emiloberg/code/moh/ehealth-portal-theme/src/main/webapp/css/partials/**/_*.scss',
-	entryPointSource: '/Users/emiloberg/code/moh/ehealth-portal-theme/src/main/webapp/css/custom.css',
-	entryPointFolderServer: '/Users/emiloberg/liferay/moh/tomcat-7.0.42/webapps/ehealth-portal-theme/css',
+	themeSource: '/code/my-project/my-theme/src/main/webapp/**',
+	themeServer: '/liferay/my-project/tomcat/webapps/my-theme',
+	partialsSource: '/code/my-project/my-theme/src/main/webapp/css/partials/**/_*.scss',
+	entryPointSource: '/code/my-project/my-theme/src/main/webapp/css/custom.css',
+	entryPointFolderServer: '/liferay/my-project/tomcat/webapps/my-theme/css'
 };
 
 
