@@ -23,7 +23,7 @@ when a file is changed:
 
 ###Installation
 1. Make sure you have [Node.js](http://nodejs.org/) installed. Run `node -v` to get current installed version if unsure.
-2. Make sure you have [Gulp](gulpjs.com) installed. Run `gulp-v` to get current installed version if unsure. If not install, run `npm install -g gulp` to install.
+2. Make sure you have [Gulp](gulpjs.com) installed. Run `gulp -v` to get current installed version if unsure. If not install, run `npm install -g gulp` to install.
 3. cd to _monator-liferay-instant-deploy-theme-tool_ directory
 4. run `npm install` to download all dependenciese.
 5. Open Gulpfile.js in your favourite text editor and edit the paths (see below).
