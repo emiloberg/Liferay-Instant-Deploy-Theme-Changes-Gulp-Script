@@ -28,6 +28,7 @@ when a file is changed:
 4. run `npm install` to download all dependenciese.
 5. Open Gulpfile.js in your favourite text editor and edit the paths (see below).
 6. run `Gulp` to start watching for files. Leave that terminal running as long as you want the app to be active.
+7. Enable LiveReload in your browser if you want LiveReload. In Chrome, you do this by clicking on the LiveReload icon next to your url bar.
 
 ###Settings
 Open Gulpfile.js for editing. 
