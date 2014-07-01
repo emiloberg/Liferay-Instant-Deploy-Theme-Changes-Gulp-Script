@@ -13,14 +13,15 @@
   "author": "Monator Technologies",
   "contributors": [
     {
-        "name": "Emil Oberg",
-        "url": "http://emiloberg.se"
+      "name": "Emil Oberg",
+      "url": "http://emiloberg.se"
     }
   ],  
   "license": "ISC",
   "dependencies": {
     "gulp": "^3.8.5",
     "gulp-newer": "^0.3.0",
-    "gulp-header": "^1.0.2"
+    "gulp-header": "^1.0.2",
+    "gulp-livereload": "^2.1.0"    
   }
 }

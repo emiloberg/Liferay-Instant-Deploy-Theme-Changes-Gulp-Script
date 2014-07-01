@@ -7,7 +7,7 @@ when a file is changed:
 
        This is done by by copying the changed files to the Liferay server (tomcat/webapps/your-theme).
  
-       Out of the box, Liferay listens to changes in the webapps folder and the changes will be visible as soon as you reload your browser.
+       Out of the box, Liferay listens to changes in the webapps folder and the changes will be visible as soon as you reload your browser. However, if you edit the (s)css, you don't even need to reload the browser - see third point below.
  
 2. Makes sure that the scss is recompiled into a css file if needed.
 
@@ -16,7 +16,10 @@ when a file is changed:
        When a scss partial file is changed, this script will add a timestamp comment in the entry point scss file (the scss file which imports the changed file)
  
        As the entry point scss file is changed, Liferay will pick up on this and re-preprocess the file and create a css file.
- 
+       
+3. LiveReload. If the scss is changed, the browser is updated instantly - without need to reloading the page. 
+
+	For LiveReload to work, you need to install a small [browser plugin for Chrome, Firefox or Safari](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-) or [add a javascript snippet to your html](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually). Browser plugin is prefered as you don't have to remove it before going live.
 
 ###Installation
 1. Make sure you have [Node.js](http://nodejs.org/) installed. Run `node -v` to get current installed version if unsure.

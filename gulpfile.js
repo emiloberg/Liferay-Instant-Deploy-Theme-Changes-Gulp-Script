@@ -10,12 +10,15 @@
  *
  *  1) Instantly inject those changes into the server.
  *  2) Makes sure that the scss is recompiled into a css file if needed.
+ *  3) If (s)css is changed, live reload it (force web browser to reload the 
+ *     css it's changed, without reloading the entire web page).
  * 
  */
 
 var gulp = require('gulp');
 var newer = require('gulp-newer');
 var header = require('gulp-header');
+var livereload = require('gulp-livereload');
 
 var paths = {
 	themeSource: '/code/my-project/my-theme/src/main/webapp/**',
@@ -27,6 +30,7 @@ var paths = {
 
 
 gulp.task('watch', function() {
+  livereload.listen();
   gulp.watch(paths.themeSource, ['copyThemeFiles']);
   gulp.watch(paths.partialsSource, ['updateEntryPointCSS']);
 });
@@ -40,7 +44,8 @@ gulp.task('copyThemeFiles', function() {
 gulp.task('updateEntryPointCSS', function() {
 	gulp.src(paths.entryPointSource)
 		.pipe(header('/* Updated: ' + Date.now() + ' */\n'))
-		.pipe(gulp.dest(paths.entryPointFolderServer));
+		.pipe(gulp.dest(paths.entryPointFolderServer))
+		.pipe(livereload());
 });
 
 
