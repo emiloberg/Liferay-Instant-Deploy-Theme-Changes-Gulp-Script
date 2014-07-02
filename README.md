@@ -58,3 +58,14 @@ Then you need to configure:
 * `themeServer` - the theme root folder on the server (tomcat/webapps/your-theme).
 * `entryPointSource` - the path to your entry point css file (the css file which imports your scss partials).
 * `entryPointFolderServer` - the folder path on the server where theentryPointSource is placed (on the server). 
+
+###Problem Solving
+#####Nothing happening when saving a file
+First. make sure your paths are correct.
+
+Second. This script works by checking timestamps. If a source code file has a newer timestamp then one on the server - it's copied to the server. For this to work, you need to have the timezone correct on your server.
+
+Liferay has GMT as default Timezone, this can be modified by editing _tomcat/bin/setenv.sh_ and changing the GMT to e.g. GMT+2.
+
+
+	Duser.timezone=GMT+2
