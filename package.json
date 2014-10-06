@@ -17,7 +17,7 @@
       "url": "http://emiloberg.se"
     }
   ],  
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "gulp": "^3.8.5",
     "gulp-newer": "^0.3.0",
