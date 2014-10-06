@@ -1,23 +1,23 @@
-#Monator Liferay Instant Deploy Theme Tool
+#Liferay Instant Deploy Theme Changes Gulp Script
 
 This small Gulp script will monitor your source code theme folder and 
 when a file is changed:
 
-1. **Instantly inject those theme changes into the server.**
+** 1. Instantly inject those theme changes into the server.**
 
-       This is done by by copying the changed files to the Liferay server (tomcat/webapps/your-theme).
+This is done by by copying the changed files to the Liferay server (tomcat/webapps/your-theme).
  
-       Out of the box, Liferay listens to changes in the webapps folder and the changes will be visible as soon as you reload your browser. However, if you edit the (s)css, you don't even need to reload the browser - see third point below.
+Out of the box, Liferay listens to changes in the webapps folder and the changes will be visible as soon as you reload your browser. However, if you edit the (s)css, you don't even need to reload the browser - see third point below.
  
-2. **Makes sure that the scss is recompiled into a css file if needed.**
-
-       If you edit a scss file, the scss needs to be preprocessed and a css file needs to be created. Liferay will do this as well. However which scss file that file is imported in (and therefor which scss if you edit a scss partial, Liferay is not smart enough to understand file needs to be preprocessed.
+** 2. Makes sure that the scss is recompiled into a css file if needed.**
+	
+If you edit a scss file, the scss needs to be preprocessed and a css file needs to be created. Liferay will do this as well. However which scss file that file is imported in (and therefor which scss if you edit a scss partial, Liferay is not smart enough to understand file needs to be preprocessed.
  
-       When a scss partial file is changed, this script will add a timestamp comment in the entry point scss file (the scss file which imports the changed file)
+When a scss partial file is changed, this script will add a timestamp comment in the entry point scss file (the scss file which imports the changed file)
  
-       As the entry point scss file is changed, Liferay will pick up on this and re-preprocess the file and create a css file.
+As the entry point scss file is changed, Liferay will pick up on this and re-preprocess the file and create a css file.
        
-3. **LiveReload.** If the scss is changed, the browser is updated instantly - without need to reloading the page. 
+**3. LiveReload.** If the scss is changed, the browser is updated instantly - without need to reloading the page. 
 
 	For LiveReload to work, you need to install a small [browser plugin for Chrome, Firefox or Safari](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-) or [add a javascript snippet to your html](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually). Browser plugin is prefered as you don't have to remove it before going live.
 
@@ -69,3 +69,9 @@ Liferay has GMT as default Timezone, this can be modified by editing _tomcat/bin
 
 
 	Duser.timezone=GMT+2
+
+You may also cd into `... /tomcat/webapps/your-theme/` and run
+
+	find . -exec touch {} \;
+	
+to recursively "touch" all theme files which will update their timestamp.

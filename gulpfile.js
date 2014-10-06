@@ -3,7 +3,7 @@
  * ====================================================
  *
  * Author: Monator Technologies
- * Licence: ISC
+ * Licence: MIT
  * 
  * This small Gulp script will monitor your source code theme folder and 
  * when a file is changed:
