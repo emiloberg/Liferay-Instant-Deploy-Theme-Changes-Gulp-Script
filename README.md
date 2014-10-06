@@ -3,13 +3,13 @@
 This small Gulp script will monitor your source code theme folder and 
 when a file is changed:
 
-** 1. Instantly inject those theme changes into the server.**
+**1. Instantly inject those theme changes into the server.**
 
 This is done by by copying the changed files to the Liferay server (tomcat/webapps/your-theme).
  
 Out of the box, Liferay listens to changes in the webapps folder and the changes will be visible as soon as you reload your browser. However, if you edit the (s)css, you don't even need to reload the browser - see third point below.
  
-** 2. Makes sure that the scss is recompiled into a css file if needed.**
+**2. Makes sure that the scss is recompiled into a css file if needed.**
 	
 If you edit a scss file, the scss needs to be preprocessed and a css file needs to be created. Liferay will do this as well. However which scss file that file is imported in (and therefor which scss if you edit a scss partial, Liferay is not smart enough to understand file needs to be preprocessed.
  
