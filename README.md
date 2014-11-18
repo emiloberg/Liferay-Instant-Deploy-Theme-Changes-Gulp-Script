@@ -44,6 +44,7 @@ Common used syntax:
 
 	*  - matches any characters but slash (/).
 	** - matches any characters including slash (/). Meaning, recursively include subfolder(s), if any.
+	[^#]*[^~] - - matches any character but slash (/), and also not files with `#` as the first character or `~` as its last character.
 
 Example: Matching all files in webapp its subdirectories.
 
@@ -53,6 +54,9 @@ Example: Matching all files begining with an underscore (_) and ending with .scs
 
 	partialsSource: '/code/my-project/my-theme/src/main/webapp/css/partials/**/_*.scss'
 
+Example: Matching all files _but not_ temporary files created by your editor, which names either start with `#` and/or end with `~`. Example matching
+
+	themeSource: '/code/my-project/my-theme/src/main/**/[^#]*[^~]'	
 Then you need to configure:
 
 * `themeServer` - the theme root folder on the server (tomcat/webapps/your-theme).
@@ -60,8 +64,11 @@ Then you need to configure:
 * `entryPointFolderServer` - the folder path on the server where theentryPointSource is placed (on the server). 
 
 ###Problem Solving
+#####Script crashing due to temporary files created by your editor.
+Change your Glob pattern to exclude those temporary files. Usually the file names of temporary files start with `#` or end with `~`. See the example a few lines up in this readme.
+
 #####Nothing happening when saving a file
-First. make sure your paths are correct.
+First. Make sure your paths are correct.
 
 Second. This script works by checking timestamps. If a source code file has a newer timestamp then one on the server - it's copied to the server. For this to work, you need to have the timezone correct on your server.
 
