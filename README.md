@@ -1,7 +1,13 @@
 #Liferay Instant Deploy Theme Changes Gulp Script
 
 This small Gulp script will monitor your source code theme folder and 
-when a file is changed:
+when a file is changed it will inject those changes into the server, recompile the scss and LiveReload your browser.
+
+### Demonstration on Liferay dev.life Sessions
+
+[![Screenshot of YouTube video](https://raw.githubusercontent.com/emiloberg/Liferay-Instant-Deploy-Theme-Changes-Gulp-Script/master/docs/screenshot-devlife-session.png)](https://www.youtube.com/watch?v=-YrkUOJeqMk#t=4055)
+
+### What this script does
 
 **1. Instantly inject those theme changes into the server.**
 
@@ -19,7 +25,7 @@ As the entry point scss file is changed, Liferay will pick up on this and re-pre
        
 **3. LiveReload.** If the scss is changed, the browser is updated instantly - without need to reloading the page. 
 
-	For LiveReload to work, you need to install a small [browser plugin for Chrome, Firefox or Safari](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-) or [add a javascript snippet to your html](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually). Browser plugin is prefered as you don't have to remove it before going live.
+For LiveReload to work, you need to install a small [browser plugin for Chrome, Firefox or Safari](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-) or [add a javascript snippet to your html](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually). Browser plugin is prefered as you don't have to remove it before going live.
 
 ###Installation
 1. Make sure you have [Node.js](http://nodejs.org/) installed. Run `node -v` to get current installed version if unsure.
