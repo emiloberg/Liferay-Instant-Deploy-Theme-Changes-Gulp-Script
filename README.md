@@ -70,6 +70,9 @@ Then you need to configure:
 * `entryPointFolderServer` - the folder path on the server where theentryPointSource is placed (on the server). 
 
 ###Problem Solving
+##### You're getting errors in your Liferay log.
+If you're getting an error, like `Caused by: java.util.concurrent.ExecutionException: org.jruby.embed.EvalFailedException` this is most probbly because of a timing problem where Liferay tries to recompile the SCSS before the changed files are copied to your server. Fix by editing the `gulpfile.js` and increase `var timingDelay = 0;`. Try a value around `100` (milliseconds).
+
 #####Script crashing due to temporary files created by your editor.
 Change your Glob pattern to exclude those temporary files. Usually the file names of temporary files start with `#` or end with `~`. See the example a few lines up in this readme.
 

@@ -19,6 +19,14 @@ var gulp = require('gulp');
 var newer = require('gulp-newer');
 var header = require('gulp-header');
 var livereload = require('gulp-livereload');
+var wait = require('gulp-wait');
+
+// On machines with slower hard disk read/write (typically on a non-SSD disk)
+// you might need to add a small delay between moving the scss files and touching
+// the entry point CSS (and by doing that telling Liferay to rebuild the SCSS).
+// 
+// Change this value to increase the delay. (Try a value around 100ms).
+var timingDelay = 0;  // milliseconds
 
 var paths = {
 	themeSource: '/code/my-project/my-theme/src/main/webapp/**',
@@ -43,6 +51,7 @@ gulp.task('copyThemeFiles', function() {
 
 gulp.task('updateEntryPointCSS', function() {
 	gulp.src(paths.entryPointSource)
+		.pipe(wait(timingDelay))
 		.pipe(header('/* Updated: ' + Date.now() + ' */\n'))
 		.pipe(gulp.dest(paths.entryPointFolderServer))
 		.pipe(livereload());
